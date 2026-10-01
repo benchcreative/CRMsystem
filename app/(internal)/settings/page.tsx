@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { APP_URL } from "@/lib/app-url";
 import { updateSettings } from "./actions";
 import { SettingsForm } from "./components/SettingsForm";
 import { getAiUsage } from "@/lib/ai-usage";
@@ -14,8 +15,7 @@ export default async function SettingsPage() {
     getNotificationBellData(),
   ]);
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
-  const embedSnippet = `<div id="crm-booking"></div>\n<script src="${appUrl}/embed.js" async></script>`;
+  const embedSnippet = `<div id="crm-booking"></div>\n<script src="${APP_URL}/embed.js" async></script>`;
 
   return (
     <div className="flex-1 bg-dash-bg">

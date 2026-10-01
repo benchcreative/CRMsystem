@@ -5,6 +5,10 @@ const globalForCron = globalThis as unknown as { reminderCronStarted?: boolean }
 
 export async function register() {
   if (process.env.NEXT_RUNTIME !== "nodejs") return;
+  // Local `next dev` only. Serverless deployments (Vercel) don't keep a
+  // process alive for node-cron, so there the sweep runs via the
+  // /api/cron/reminders route on the schedule in vercel.json.
+  if (process.env.NODE_ENV !== "development" || process.env.VERCEL) return;
   if (globalForCron.reminderCronStarted) return;
   globalForCron.reminderCronStarted = true;
 

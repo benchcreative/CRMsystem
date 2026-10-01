@@ -1,10 +1,10 @@
 import type { ReactElement } from "react";
 import { render } from "@react-email/components";
 import type { Settings } from "@prisma/client";
-import { resend, QUOTE_SENDER_EMAIL } from "@/lib/resend";
+import { getResendClient, QUOTE_SENDER_EMAIL } from "@/lib/resend";
 import { plainTextOptions, type EmailBrand } from "@/emails/_components/layout";
 
-export const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+export { APP_URL } from "@/lib/app-url";
 
 export function emailBrandFromSettings(settings: Settings | null): EmailBrand {
   return {
@@ -38,6 +38,12 @@ export async function sendEmail({
   attachments?: Attachment[];
   context: string; // for logs, e.g. "appointment reminder"
 }): Promise<SendEmailResult> {
+  const resend = getResendClient();
+  if (!resend) {
+    console.error(`Resend not configured — skipping ${context} email.`);
+    return { ok: false, error: "Email is not configured (RESEND_API_KEY missing)." };
+  }
+
   try {
     const [html, text] = await Promise.all([
       render(react),
