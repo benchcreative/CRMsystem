@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T14:16:32.939Z",
+  "title": "Design System: Ridgeway CRM",
+  "extensions": {
+    "colorMeta": {
+      "brass-fitting": {
+        "role": "primary",
+        "displayName": "Brass Fitting",
+        "canonical": "oklch(70% 0.14 65.1)",
+        "tonalRamp": [
+          "oklch(15% 0.067 65.1)",
+          "oklch(26% 0.092 65.1)",
+          "oklch(37% 0.118 65.1)",
+          "oklch(48% 0.14 65.1)",
+          "oklch(60% 0.14 65.1)",
+          "oklch(71% 0.123 65.1)",
+          "oklch(83% 0.095 65.1)",
+          "oklch(95% 0.067 65.1)"
+        ]
+      },
+      "limewash": {
+        "role": "neutral",
+        "displayName": "Limewash",
+        "canonical": "oklch(94.7% 0.014 84.6)",
+        "tonalRamp": [
+          "oklch(15% 0.014 84.6)",
+          "oklch(26% 0.014 84.6)",
+          "oklch(37% 0.014 84.6)",
+          "oklch(48% 0.014 84.6)",
+          "oklch(60% 0.014 84.6)",
+          "oklch(71% 0.014 84.6)",
+          "oklch(83% 0.014 84.6)",
+          "oklch(95% 0.014 84.6)"
+        ]
+      },
+      "porcelain": {
+        "role": "neutral",
+        "displayName": "Porcelain",
+        "canonical": "oklch(99.4% 0.006 84.6)",
+        "tonalRamp": [
+          "oklch(15% 0.006 84.6)",
+          "oklch(26% 0.006 84.6)",
+          "oklch(37% 0.006 84.6)",
+          "oklch(48% 0.006 84.6)",
+          "oklch(60% 0.006 84.6)",
+          "oklch(71% 0.006 84.6)",
+          "oklch(83% 0.006 84.6)",
+          "oklch(95% 0.006 84.6)"
+        ]
+      },
+      "wrought-iron": {
+        "role": "neutral",
+        "displayName": "Wrought Iron",
+        "canonical": "oklch(20.9% 0.004 264.5)",
+        "tonalRamp": [
+          "oklch(15% 0.004 264.5)",
+          "oklch(26% 0.004 264.5)",
+          "oklch(37% 0.004 264.5)",
+          "oklch(48% 0.004 264.5)",
+          "oklch(60% 0.004 264.5)",
+          "oklch(71% 0.004 264.5)",
+          "oklch(83% 0.004 264.5)",
+          "oklch(95% 0.004 264.5)"
+        ]
+      },
+      "walnut-ink": {
+        "role": "neutral",
+        "displayName": "Walnut Ink",
+        "canonical": "oklch(22.2% 0.006 91.6)",
+        "tonalRamp": [
+          "oklch(15% 0.006 91.6)",
+          "oklch(26% 0.006 91.6)",
+          "oklch(37% 0.006 91.6)",
+          "oklch(48% 0.006 91.6)",
+          "oklch(60% 0.006 91.6)",
+          "oklch(71% 0.006 91.6)",
+          "oklch(83% 0.006 91.6)",
+          "oklch(95% 0.006 91.6)"
+        ]
+      },
+      "grout-grey": {
+        "role": "neutral",
+        "displayName": "Grout Grey",
+        "canonical": "oklch(59.9% 0.026 93.5)",
+        "tonalRamp": [
+          "oklch(15% 0.026 93.5)",
+          "oklch(26% 0.026 93.5)",
+          "oklch(37% 0.026 93.5)",
+          "oklch(48% 0.026 93.5)",
+          "oklch(60% 0.026 93.5)",
+          "oklch(71% 0.026 93.5)",
+          "oklch(83% 0.026 93.5)",
+          "oklch(95% 0.026 93.5)"
+        ]
+      },
+      "oat-hairline": {
+        "role": "neutral",
+        "displayName": "Oat Hairline",
+        "canonical": "oklch(90.8% 0.021 85.9)",
+        "tonalRamp": [
+          "oklch(15% 0.021 85.9)",
+          "oklch(26% 0.021 85.9)",
+          "oklch(37% 0.021 85.9)",
+          "oklch(48% 0.021 85.9)",
+          "oklch(60% 0.021 85.9)",
+          "oklch(71% 0.021 85.9)",
+          "oklch(83% 0.021 85.9)",
+          "oklch(95% 0.021 85.9)"
+        ]
+      },
+      "deep-slate": {
+        "role": "neutral",
+        "displayName": "Deep Slate",
+        "canonical": "oklch(19.4% 0.016 256.8)",
+        "tonalRamp": [
+          "oklch(15% 0.016 256.8)",
+          "oklch(26% 0.016 256.8)",
+          "oklch(37% 0.016 256.8)",
+          "oklch(48% 0.016 256.8)",
+          "oklch(60% 0.016 256.8)",
+          "oklch(71% 0.016 256.8)",
+          "oklch(83% 0.016 256.8)",
+          "oklch(95% 0.016 256.8)"
+        ]
+      },
+      "status-new": {
+        "role": "secondary",
+        "displayName": "Slate Blue",
+        "canonical": "oklch(61.8% 0.055 252.3)",
+        "tonalRamp": [
+          "oklch(15% 0.038 252.3)",
+          "oklch(26% 0.048 252.3)",
+          "oklch(37% 0.055 252.3)",
+          "oklch(48% 0.055 252.3)",
+          "oklch(60% 0.055 252.3)",
+          "oklch(71% 0.055 252.3)",
+          "oklch(83% 0.049 252.3)",
+          "oklch(95% 0.038 252.3)"
+        ]
+      },
+      "status-booked": {
+        "role": "secondary",
+        "displayName": "Tile Teal",
+        "canonical": "oklch(63.8% 0.062 209.8)",
+        "tonalRamp": [
+          "oklch(15% 0.041 209.8)",
+          "oklch(26% 0.052 209.8)",
+          "oklch(37% 0.062 209.8)",
+          "oklch(48% 0.062 209.8)",
+          "oklch(60% 0.062 209.8)",
+          "oklch(71% 0.062 209.8)",
+          "oklch(83% 0.053 209.8)",
+          "oklch(95% 0.041 209.8)"
+        ]
+      },
+      "status-quoted": {
+        "role": "secondary",
+        "displayName": "Sage Glaze",
+        "canonical": "oklch(65.9% 0.085 185.3)",
+        "tonalRamp": [
+          "oklch(15% 0.048 185.3)",
+          "oklch(26% 0.064 185.3)",
+          "oklch(37% 0.08 185.3)",
+          "oklch(48% 0.085 185.3)",
+          "oklch(60% 0.085 185.3)",
+          "oklch(71% 0.083 185.3)",
+          "oklch(83% 0.066 185.3)",
+          "oklch(95% 0.048 185.3)"
+        ]
+      },
+      "status-lost": {
+        "role": "secondary",
+        "displayName": "Pewter",
+        "canonical": "oklch(52.8% 0.025 256.8)",
+        "tonalRamp": [
+          "oklch(15% 0.025 256.8)",
+          "oklch(26% 0.025 256.8)",
+          "oklch(37% 0.025 256.8)",
+          "oklch(48% 0.025 256.8)",
+          "oklch(60% 0.025 256.8)",
+          "oklch(71% 0.025 256.8)",
+          "oklch(83% 0.025 256.8)",
+          "oklch(95% 0.025 256.8)"
+        ]
+      },
+      "terracotta-alert": {
+        "role": "tertiary",
+        "displayName": "Terracotta Alert",
+        "canonical": "oklch(57.9% 0.143 26.6)",
+        "tonalRamp": [
+          "oklch(15% 0.068 26.6)",
+          "oklch(26% 0.094 26.6)",
+          "oklch(37% 0.12 26.6)",
+          "oklch(48% 0.143 26.6)",
+          "oklch(60% 0.143 26.6)",
+          "oklch(71% 0.125 26.6)",
+          "oklch(83% 0.096 26.6)",
+          "oklch(95% 0.068 26.6)"
+        ]
+      },
+      "putty": {
+        "role": "neutral",
+        "displayName": "Putty",
+        "canonical": "oklch(86.8% 0.018 84.6)",
+        "tonalRamp": [
+          "oklch(15% 0.018 84.6)",
+          "oklch(26% 0.018 84.6)",
+          "oklch(37% 0.018 84.6)",
+          "oklch(48% 0.018 84.6)",
+          "oklch(60% 0.018 84.6)",
+          "oklch(71% 0.018 84.6)",
+          "oklch(83% 0.018 84.6)",
+          "oklch(95% 0.018 84.6)"
+        ]
+      },
+      "warm-taupe": {
+        "role": "neutral",
+        "displayName": "Warm Taupe",
+        "canonical": "oklch(74.3% 0.024 84.6)",
+        "tonalRamp": [
+          "oklch(15% 0.024 84.6)",
+          "oklch(26% 0.024 84.6)",
+          "oklch(37% 0.024 84.6)",
+          "oklch(48% 0.024 84.6)",
+          "oklch(60% 0.024 84.6)",
+          "oklch(71% 0.024 84.6)",
+          "oklch(83% 0.024 84.6)",
+          "oklch(95% 0.024 84.6)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero stat numbers on the dashboard, with tabular figures and a small grey label 4px beneath."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section headings inside a page."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Table cells, list rows, form values, buttons and nav items."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field hints, timestamps, compact buttons and error text."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "colour-transition",
+        "value": "150ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Hover and state colour changes on buttons, rows and nav items."
+      },
+      {
+        "name": "step-transition",
+        "value": "180ms ease-out",
+        "purpose": "Fade-and-slide between steps of the customer booking widget; disabled under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "widget-two-column",
+        "value": "480px (container width)"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one brass action per view, e.g. '+ Add customer' or 'Save changes'.",
+      "html": "<button class=\"ds-btn-primary\">Save changes</button>",
+      "css": ".ds-btn-primary { background: var(--color-accent); color: var(--color-canvas); font: 400 14px/20px Inter, system-ui, sans-serif; padding: 8px 16px; border: 0; border-radius: 0; cursor: pointer; transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-btn-primary:hover { background: color-mix(in srgb, var(--color-accent) 90%, transparent); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-dash-ink); outline-offset: 2px; } .ds-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Hairline-outlined compact button for supporting actions.",
+      "html": "<button class=\"ds-btn-secondary\">Download PDF</button>",
+      "css": ".ds-btn-secondary { background: transparent; color: var(--color-dash-ink); font: 400 12px/16px Inter, system-ui, sans-serif; padding: 6px 12px; border: 1px solid var(--color-dash-line); border-radius: 0; cursor: pointer; transition: border-color 150ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-btn-secondary:hover { border-color: var(--color-dash-ink); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--color-dash-ink); outline-offset: 2px; }"
+    },
+    {
+      "name": "Staff Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Recessed limewash field with a grey label; focus darkens the border, no ring.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Company name</span><input class=\"ds-input\" value=\"Ridgeway Home Improvements Ltd\"></label>",
+      "css": ".ds-field { display: block; width: 280px; } .ds-field-label { display: block; margin-bottom: 4px; font: 400 14px/20px Inter, system-ui, sans-serif; color: var(--color-dash-muted); } .ds-input { width: 100%; box-sizing: border-box; background: var(--color-dash-bg); color: var(--color-dash-ink); font: 400 14px/20px Inter, system-ui, sans-serif; padding: 8px 12px; border: 1px solid var(--color-dash-line); border-radius: 0; } .ds-input:focus { outline: none; border-color: var(--color-dash-ink); }"
+    },
+    {
+      "name": "Sidebar Navigation",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Wrought-iron sidebar; active item gets a brass left edge and tint.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-item ds-nav-item-active\" href=\"#\"><svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2.5\" y=\"2.5\" width=\"6.5\" height=\"6.5\" rx=\"1\"/><rect x=\"11\" y=\"2.5\" width=\"6.5\" height=\"4\" rx=\"1\"/><rect x=\"11\" y=\"8.5\" width=\"6.5\" height=\"9\" rx=\"1\"/><rect x=\"2.5\" y=\"11\" width=\"6.5\" height=\"6.5\" rx=\"1\"/></svg>Dashboard</a><a class=\"ds-nav-item\" href=\"#\"><svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2.5 3h15l-5.5 7v6l-4 1.5v-7.5z\"/></svg>Leads</a></nav>",
+      "css": ".ds-nav { width: 240px; box-sizing: border-box; background: var(--color-dash-sidebar); padding: 24px; display: grid; gap: 4px; } .ds-nav-item { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-left: 2px solid transparent; font: 400 14px/20px Inter, system-ui, sans-serif; color: rgba(255,255,255,0.55); text-decoration: none; transition: background-color 150ms, color 150ms; } .ds-nav-item svg { width: 20px; height: 20px; } .ds-nav-item:hover { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.85); } .ds-nav-item-active, .ds-nav-item-active:hover { border-left-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 15%, transparent); color: #fff; }"
+    },
+    {
+      "name": "Stat Tile",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Signature number-first card: 36px Outfit numeral, grey label, hairline-divided list.",
+      "html": "<div class=\"ds-stat\"><span class=\"ds-stat-num ds-stat-num-urgent\">2</span><p class=\"ds-stat-label\">Needs follow-up</p><div class=\"ds-stat-row\"><span><i class=\"ds-marker\"></i>Chloe Whitfield</span><span class=\"ds-muted\">Quoted</span></div><div class=\"ds-stat-row\"><span><i class=\"ds-marker\"></i>Second Overdue Test</span><span class=\"ds-muted\">New</span></div></div>",
+      "css": ".ds-stat { width: 320px; box-sizing: border-box; background: var(--color-dash-surface); border: 1px solid var(--color-dash-line); padding: 24px; font: 400 14px/20px Inter, system-ui, sans-serif; color: var(--color-dash-ink); } .ds-stat-num { display: block; font: 700 36px/1 Outfit, system-ui, sans-serif; font-variant-numeric: tabular-nums; color: var(--color-dash-ink); } .ds-stat-num-urgent { color: var(--color-accent); } .ds-stat-label { margin: 4px 0 20px; color: var(--color-dash-muted); } .ds-stat-row { display: flex; justify-content: space-between; padding: 8px 0; border-top: 1px solid var(--color-dash-line); transition: background-color 150ms; } .ds-stat-row:hover { background: color-mix(in srgb, var(--color-dash-line) 30%, transparent); } .ds-marker { display: inline-block; width: 6px; height: 6px; margin-right: 8px; vertical-align: middle; background: var(--color-accent); } .ds-muted { color: var(--color-dash-muted); }"
+    },
+    {
+      "name": "Status Badge",
+      "kind": "chip",
+      "refersTo": "status-badge",
+      "description": "8px solid square in the pipeline status colour, then the status name.",
+      "html": "<span class=\"ds-status\"><i class=\"ds-status-mark\" style=\"background: var(--color-status-quoted)\"></i>Quoted</span> <span class=\"ds-status\"><i class=\"ds-status-mark\" style=\"background: var(--color-status-won)\"></i>Won</span>",
+      "css": ".ds-status { display: inline-flex; align-items: center; gap: 8px; margin-right: 16px; font: 400 14px/20px Inter, system-ui, sans-serif; color: var(--color-dash-ink); } .ds-status-mark { width: 8px; height: 8px; flex-shrink: 0; }"
+    },
+    {
+      "name": "Customer Input",
+      "kind": "input",
+      "refersTo": "customer-input",
+      "description": "Customer-facing field (embed widget): white, 48px tall, 16px text, 8px corners, brass focus ring.",
+      "html": "<label class=\"ds-cfield\"><span class=\"ds-cfield-label\">Email</span><input class=\"ds-cinput\" placeholder=\"you@example.com\"></label>",
+      "css": ".ds-cfield { display: block; width: 320px; } .ds-cfield-label { display: block; margin-bottom: 8px; font: 500 15px/1.5 Inter, system-ui, sans-serif; color: #1c1b18; } .ds-cinput { width: 100%; box-sizing: border-box; min-height: 48px; padding: 11px 14px; font: 400 16px/1.5 Inter, system-ui, sans-serif; color: #1c1b18; background: #fff; border: 1px solid #d9d3c7; border-radius: 8px; transition: border-color 150ms; } .ds-cinput:hover { border-color: #b3ab9b; } .ds-cinput:focus { outline: 3px solid rgba(217,138,46,0.28); outline-offset: 0; border-color: #d98a2e; }"
+    },
+    {
+      "name": "Customer Primary Button",
+      "kind": "button",
+      "refersTo": "customer-button-primary",
+      "description": "Full-width 52px brass button used in the booking widget.",
+      "html": "<button class=\"ds-cbtn\">Book appointment</button>",
+      "css": ".ds-cbtn { width: 320px; min-height: 52px; padding: 0 20px; border: 0; border-radius: 8px; background: #d98a2e; color: #10151c; font: 600 16px/1 Inter, system-ui, sans-serif; cursor: pointer; transition: background-color 150ms; } .ds-cbtn:hover { background: #c97c25; } .ds-cbtn:focus-visible { outline: 3px solid rgba(217,138,46,0.28); outline-offset: 2px; } .ds-cbtn:disabled { opacity: 0.45; cursor: not-allowed; }"
+    },
+    {
+      "name": "Email Button",
+      "kind": "button",
+      "refersTo": "email-button-primary",
+      "description": "The single button in a branded email: Wrought Iron bold text on the brand colour.",
+      "html": "<a class=\"ds-email-btn\" href=\"#\">View your quote</a>",
+      "css": ".ds-email-btn { display: inline-block; background: #d98a2e; color: #17181a; font: 700 16px/20px Helvetica, Arial, sans-serif; text-decoration: none; padding: 14px 24px; border-radius: 6px; } .ds-email-btn:hover { background: #c97c25; } .ds-email-btn:focus-visible { outline: 3px solid rgba(217,138,46,0.28); outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Showroom Counter",
+    "overview": "This is the desk where a client signs off their new kitchen: calm, orderly, quietly crafted. Everything on it is there for a reason, laid out square, and finished well enough that nobody notices the finish, only the confidence. The system borrows the materials of the showroom itself: a limewash wall behind, a porcelain surface in front, wrought-iron fixtures, and a single brass fitting that catches the eye.\n\nThe staff app is an Operate surface first. Density is moderate, numbers lead, and colour is rationed so it keeps its meaning: the brass accent appears only where something needs doing or can be done. Depth comes from tone and hairline joins, never from shadow. The feel is quiet and precise — restrained, exactly aligned, with colour only where it carries information.\n\nCustomer-facing surfaces (the embeddable booking widget, emails, public pages) speak the same material language with gentler hands: rounded corners, larger touch targets, and an amber focus ring, because customers are on their phones and not doing this every day. The old dark \"navy canvas\" palette on the public booking and quote pages is retired.",
+    "keyCharacteristics": [
+      "Warm neutral ground (limewash) with porcelain cards and wrought-iron navigation",
+      "One accent, brass, used sparingly and always meaningfully",
+      "Flat: hairline borders and tonal steps, no shadows, no gradients",
+      "Square corners in the staff app; gentle 6–12px rounding only on customer-facing surfaces",
+      "Outfit Bold for titles and hero numbers, Inter for everything you read or act on"
+    ],
+    "rules": [
+      {
+        "name": "The Brass Rule",
+        "body": "Brass means \"act here\". If an element isn't the primary action, an unread/overdue signal, or the current selection, it isn't brass. Decorative brass is a bug. Brass is for fills, borders, markers and focus rings. Brass as text is allowed only at large bold sizes (24px+ Outfit 700), never for body text or labels on cream: it measures 2.71:1 on Porcelain and 2.36:1 on Limewash, below even WCAG's 3:1 large-text minimum. So large brass text is an accepted exception, allowed only where an adjacent Walnut Ink or Grout Grey label carries the same meaning (as \"Needs follow-up\" does beneath its numeral).",
+        "section": "colors"
+      },
+      {
+        "name": "The Retired Night Rule",
+        "body": "The old dark palette (navy canvas `#10151C`, surface `#171E29`, light ink `#E8ECF1`) still styles the public `/book` and `/q/[token]` pages and legacy tokens in `app/globals.css`. It is retired: never use it in new work, and move those pages onto limewash/porcelain when they are next touched. `deep-slate` survives only as text-on-brass.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Voice Rule",
+        "body": "Outfit is for titles and hero numbers; Inter is for everything else. Never set a paragraph, form value or button label in Outfit, and never set a page title in Inter.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline Rule",
+        "body": "Separation is a 1px Oat Hairline border or a tonal step, never a shadow or a gradient. If two surfaces need more separation than a hairline gives, the layout is wrong.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do put new staff screens on Limewash with Porcelain cards and 1px Oat Hairline borders.",
+      "Do keep brass to primary actions, current selection and urgent counts (The Brass Rule).",
+      "Do lead dashboards and summaries with a 36px Outfit number and a small grey label.",
+      "Do use the 4px spacing scale: 24px card padding, 24px card gaps, 32px page padding.",
+      "Do use tabular figures and right alignment for money and counts in tables.",
+      "Do round corners (6–12px) and enlarge touch targets only on customer-facing surfaces."
+    ],
+    "donts": [
+      "Don't add shadows, glows or gradients anywhere (The Hairline Rule).",
+      "Don't use the retired dark navy palette in new work (The Retired Night Rule).",
+      "Don't put white text on brass anywhere; use Deep Slate in the app and widget, Wrought Iron in emails.",
+      "Don't set small text or labels in brass; brass text is only for large bold numerals with a label beside them (The Brass Rule).",
+      "Don't round corners in the staff app.",
+      "Don't set body copy, buttons or form values in Outfit.",
+      "Don't introduce a second accent colour; use the muted status colours for categories."
+    ]
+  }
+}

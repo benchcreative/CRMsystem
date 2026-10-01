@@ -1,0 +1,212 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum JobType {
+  kitchen
+  bathroom
+  bedroom
+}
+
+enum Source {
+  facebook
+  google
+  referral
+  walk_in
+  website
+}
+
+enum Status {
+  new
+  quote_booked
+  quoted
+  won
+  lost
+}
+
+enum JobStatus {
+  not_scheduled
+  scheduled
+  complete
+}
+
+enum QuoteStatus {
+  draft
+  sent
+  accepted
+  declined
+}
+
+model Customer {
+  id             String         @id @default(cuid())
+  firstName      String
+  lastName       String
+  addressLine1   String
+  addressLine2   String?
+  postcode       String         @default("")
+  phone          String
+  // Required: reminder and confirmation emails depend on it. Rows created
+  // before this was mandatory were backfilled with a
+  // "noemail-<id>@placeholder.local" address (see
+  // scripts/backfill-customer-email.mjs) — not a real address.
+  email          String
+  jobType        JobType
+  source         Source
+  value          Int? // estimated job value in pence
+  status         Status         @default(new)
+  wonAt          DateTime?
+  notes          String         @default("")
+  // Set when this customer was created via the public /book page.
+  appointmentAt  DateTime?
+  // Set once an appointment reminder email has gone out (scheduled sweep or
+  // the manual "Send reminder now" button) — see lib/reminders.ts.
+  reminderSentAt DateTime?
+  // Separate from the initial appointmentAt (booking consult) — tracks a
+  // scheduled installation job. Shown on the homepage's "Today's schedule"
+  // widget alongside appointments, visually distinguished from them.
+  jobStatus      JobStatus      @default(not_scheduled)
+  installDate    DateTime?
+  // Ad attribution captured automatically from /book's URL query string
+  // (see lib/utm.ts). Null for customers added internally or with no UTMs.
+  utmSource      String?
+  utmMedium      String?
+  utmCampaign    String?
+  utmContent     String?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  contactLogs    ContactLog[]
+  quotes         Quote[]
+  notifications  Notification[]
+}
+
+enum ContactLogDirection {
+  outbound_call
+  inbound_call
+  outbound_email
+  outbound_sms
+}
+
+model ContactLog {
+  id          String               @id @default(cuid())
+  customerId  String
+  customer    Customer             @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  // Nullable: historical entries logged before this field existed have no
+  // real answer here. New entries (manual button or AI follow-up send)
+  // always set one.
+  direction   ContactLogDirection?
+  note        String?
+  contactedAt DateTime             @default(now())
+
+  @@index([customerId, contactedAt])
+}
+
+// Single-row table representing the business issuing quotes.
+// Always read/written via the fixed "singleton" id.
+model Settings {
+  id                String   @id @default("singleton")
+  companyName       String
+  addressLine1      String
+  addressLine2      String?
+  phone             String
+  email             String
+  vatNumber         String?
+  // Recipient for notification alert emails (see lib/notification-email.ts).
+  // Editable per business; not hardcoded anywhere else in the app.
+  notificationEmail String?  @default("alexanderjamesworks@gmail.com")
+  // AI follow-up usage cap (see lib/ai-usage.ts). Resets to 0 the first time
+  // an AI call is attempted (or the settings page is viewed) in a new
+  // calendar month.
+  aiCallsThisMonth  Int      @default(0)
+  aiCallsResetAt    DateTime @default(now())
+  // Comma-separated hostnames allowed to embed the booking widget — the
+  // public API routes reject cross-origin requests from anywhere else
+  // (localhost always allowed, for testing). See lib/embed.ts.
+  allowedEmbedDomains String @default("")
+  // Email branding (see emails/_components/layout.tsx). logoUrl must be a
+  // publicly reachable image — email clients can't load localhost URLs.
+  logoUrl             String?
+  brandColor          String @default("#D98A2E")
+}
+
+model Quote {
+  id            String          @id @default(cuid())
+  customerId    String
+  customer      Customer        @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  quoteNumber   String          @unique
+  publicToken   String          @unique @default(uuid())
+  issuedAt      DateTime        @default(now())
+  validUntil    DateTime?
+  status        QuoteStatus     @default(draft)
+  vatEnabled    Boolean         @default(false)
+  vatRate       Float           @default(20)
+  notes         String?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  lineItems     QuoteLineItem[]
+  notifications Notification[]
+
+  @@index([customerId])
+}
+
+model QuoteLineItem {
+  id          String  @id @default(cuid())
+  quoteId     String
+  quote       Quote   @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  description String
+  quantity    Float
+  unit        String?
+  unitPrice   Int // pence
+
+  @@index([quoteId])
+}
+
+// Monthly ad spend per source, for the /marketing ROI table. `month` is
+// always stored as the first of the month (midnight) so a source+month pair
+// is a stable, unique key to upsert against.
+model AdSpend {
+  id        String   @id @default(cuid())
+  source    Source
+  month     DateTime
+  amount    Int // pence
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([source, month])
+}
+
+enum NotificationType {
+  overdue_lead
+  quote_accepted
+  quote_declined
+  quote_expiring
+}
+
+model Notification {
+  id         String           @id @default(cuid())
+  type       NotificationType
+  message    String
+  customerId String?
+  customer   Customer?        @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  quoteId    String?
+  quote      Quote?           @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  read       Boolean          @default(false)
+  // Set once this notification has been folded into a batched alert email
+  // (or a flush ran and found no address configured). Independent of `read`
+  // — this tracks email delivery, not in-app read state.
+  emailedAt  DateTime?
+  createdAt  DateTime         @default(now())
+
+  @@index([read, createdAt])
+  @@index([customerId, type])
+  @@index([quoteId, type])
+}

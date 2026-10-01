@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --color-canvas: #10151c;
+  --color-surface: #171e29;
+  --color-line: #252d3a;
+  --color-ink: #e8ecf1;
+  --color-muted: #8894a6;
+  --color-accent: #d98a2e;
+
+  --color-status-new: #6e88a6;
+  --color-status-booked: #5d96a0;
+  --color-status-quoted: #4ca399;
+  --color-status-won: #d98a2e;
+  --color-status-lost: #626c7a;
+
+  /* Not part of the design palette proper: a desaturated red, used only
+     for form validation errors since the palette has no error colour. */
+  --color-error: #c0524a;
+
+  /* Light palette for the whole staff app (app/(internal)/*): see
+     DESIGN.md. The dark palette above is retired and only still styles
+     the public /book and /q/[token] pages. */
+  --color-dash-bg: #f2ede3;
+  --color-dash-surface: #fffdf9;
+  --color-dash-sidebar: #17181a;
+  --color-dash-ink: #1c1b18;
+  --color-dash-muted: #85806f;
+  --color-dash-line: #e7e0d1;
+}
+
+@theme inline {
+  --color-canvas: var(--color-canvas);
+  --color-surface: var(--color-surface);
+  --color-line: var(--color-line);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --color-accent: var(--color-accent);
+
+  --color-status-new: var(--color-status-new);
+  --color-status-booked: var(--color-status-booked);
+  --color-status-quoted: var(--color-status-quoted);
+  --color-status-won: var(--color-status-won);
+  --color-status-lost: var(--color-status-lost);
+
+  --color-error: var(--color-error);
+
+  --color-dash-bg: var(--color-dash-bg);
+  --color-dash-surface: var(--color-dash-surface);
+  --color-dash-sidebar: var(--color-dash-sidebar);
+  --color-dash-ink: var(--color-dash-ink);
+  --color-dash-muted: var(--color-dash-muted);
+  --color-dash-line: var(--color-dash-line);
+
+  --font-heading: var(--font-outfit);
+  --font-body: var(--font-inter);
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body), sans-serif;
+}

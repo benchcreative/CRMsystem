@@ -1,0 +1,25 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "embed-test",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "embed-test", "-l", "5500"],
+      "port": 5500,
+      "autoPort": false
+    },
+    {
+      "name": "email-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "email"],
+      "port": 3001,
+      "autoPort": false
+    }
+  ]
+}

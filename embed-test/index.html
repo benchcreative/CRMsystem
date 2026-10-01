@@ -1,0 +1,64 @@
+<!doctype html>
+<!--
+  Fake third-party "client website" for testing the embeddable booking
+  widget cross-origin. Not part of the Next.js app — serve it on its own
+  port (see the "embed-test" entry in .claude/launch.json), e.g.:
+    npx serve embed-test -l 5500
+  then open http://localhost:5500/?utm_source=facebook&utm_campaign=test
+
+  The global styles below are deliberately aggressive: if the widget's
+  Shadow DOM isolation leaked, they'd visibly restyle the booking form.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hartley &amp; Sons Kitchens — Contact</title>
+    <style>
+      * { font-family: Georgia, "Times New Roman", serif; color: #5b2a86; }
+      body { margin: 0; background: #f4f7fb; font-size: 20px; line-height: 2; }
+      header { background: #1f3a5f; padding: 16px 32px; }
+      header * { color: #fff; }
+      nav a { margin-right: 24px; }
+      main { max-width: 960px; margin: 0 auto; padding: 32px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; }
+      input, select, textarea { border: 3px dashed red; background: yellow; }
+      button { background: hotpink; border-radius: 999px; padding: 20px; }
+      label { text-transform: uppercase; }
+      h2 { font-size: 40px; text-decoration: underline; }
+      p { margin: 24px 0; }
+      footer { text-align: center; padding: 32px; font-size: 14px; }
+      @media (max-width: 720px) {
+        main { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>Hartley &amp; Sons Kitchens</strong>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Our work</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Get in touch</h2>
+        <p>
+          Family-run fitters serving Leeds since 1998. Tell us about your
+          project and pick a time for a free home visit.
+        </p>
+        <p>This is dummy content on a fake client site, used to test the embedded booking widget.</p>
+      </section>
+
+      <section>
+        <!-- Embed snippet, exactly as copied from the CRM's Settings page -->
+        <div id="crm-booking"></div>
+        <script src="http://localhost:3000/embed.js" async></script>
+      </section>
+    </main>
+
+    <footer>&copy; Hartley &amp; Sons Kitchens (test site)</footer>
+  </body>
+</html>
