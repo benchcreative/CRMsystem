@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Inter } from "next/font/google";
+import { connection } from "next/server";
 import { syncNotifications } from "@/lib/notifications";
 import "./globals.css";
 
@@ -25,6 +26,9 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   // get synced and their alert emails batched-and-flushed promptly — see
   // lib/notifications.ts. The header/bell UI that surfaces this data is
   // internal-only and lives in app/(internal)/layout.tsx instead.
+  // connection() keeps every page request-time rendered: they all read the
+  // database, which isn't reachable (or shouldn't be baked in) at build.
+  await connection();
   await syncNotifications();
 
   return (

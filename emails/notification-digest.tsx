@@ -8,6 +8,7 @@ import {
   sampleBrand,
   type EmailBrand,
 } from "./_components/layout";
+import { APP_URL } from "../lib/app-url";
 
 // Internal alert email to the business, batching every pending notification.
 export type NotificationDigestEmailProps = {
@@ -83,5 +84,5 @@ NotificationDigestEmail.PreviewProps = {
     "Widget Test accepted quote Q-0008",
     "Quote Q-0006 for Status Accept expires soon",
   ],
-  dashboardUrl: "http://localhost:3000",
+  dashboardUrl: APP_URL,
 } satisfies NotificationDigestEmailProps;

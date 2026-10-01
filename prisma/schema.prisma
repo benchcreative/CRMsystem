@@ -8,7 +8,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -122,7 +122,7 @@ model Settings {
   vatNumber         String?
   // Recipient for notification alert emails (see lib/notification-email.ts).
   // Editable per business; not hardcoded anywhere else in the app.
-  notificationEmail String?  @default("alexanderjamesworks@gmail.com")
+  notificationEmail String?
   // AI follow-up usage cap (see lib/ai-usage.ts). Resets to 0 the first time
   // an AI call is attempted (or the settings page is viewed) in a new
   // calendar month.

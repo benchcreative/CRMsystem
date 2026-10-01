@@ -7,6 +7,7 @@ import {
   sampleBrand,
   type EmailBrand,
 } from "./_components/layout";
+import { APP_URL } from "../lib/app-url";
 
 export type QuoteReadyEmailProps = {
   brand: EmailBrand;
@@ -52,5 +53,5 @@ QuoteReadyEmail.PreviewProps = {
   quoteNumber: "Q-0002",
   total: "£3,200",
   validUntil: "24 October 2026",
-  quoteUrl: "http://localhost:3000/q/sample-token",
+  quoteUrl: `${APP_URL}/q/sample-token`,
 } satisfies QuoteReadyEmailProps;

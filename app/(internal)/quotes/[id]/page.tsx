@@ -1,6 +1,7 @@
 ﻿import Link from "next/link";
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
+import { APP_URL } from "@/lib/app-url";
 import { calculateLineItemTotal, calculateQuoteTotals } from "@/lib/quote";
 import { formatPenceAsGBP } from "@/lib/currency";
 import { formatDateTime } from "@/lib/date";
@@ -43,8 +44,7 @@ export default async function QuoteViewPage({
     quote.vatRate
   );
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
-  const publicUrl = `${appUrl}/q/${quote.publicToken}`;
+  const publicUrl = `${APP_URL}/q/${quote.publicToken}`;
 
   return (
     <div className="flex-1 bg-dash-bg">
